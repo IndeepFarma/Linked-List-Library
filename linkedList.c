@@ -1,4 +1,5 @@
-/* Linked List Library */
+/*  Author: Indeep Farma
+    Linked List Library */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,11 +9,25 @@ typedef struct linkedListNode{
   struct linkedListNode *next;
 } Node;
 
+/* Initialize a new Node */
+Node *initNewNode(int data)
+{
+  /* Declaring Variables */
+  Node *newNode = NULL;
+  
+  newNode = malloc(sizeof(Node));
+  newNode->data = data;
+  newNode->next = NULL;
+
+  return newNode;
+}
+
 int main(){
 
   /* Declaring Variables */
   Node *list = NULL;
-  int i = 0;
+  Node *listNode = NULL;
+  // int i = 0;
   int input = 0;
 
   /* Malloc the array */
@@ -22,10 +37,9 @@ int main(){
   printf("Enter number to add to list\n");
   scanf("%d", &input);
 
-  /* Add data to linked list */
+  listNode = initNewNode(input);
 
-
-  printf("Input : %d\n", input);
+  printf("List Node : %d\n", listNode->data);
 
   return 0;
 }
