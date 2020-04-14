@@ -16,6 +16,7 @@ typedef struct linkedListNode {
 int getListLength(Node *head);
 Node *initNewNode(int data);
 void appendList(Node **head, Node *node);
+void freeList(Node *head);
 void prependList(Node **head, Node *node);
 void printList(Node *head, int len);
 

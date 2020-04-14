@@ -76,3 +76,16 @@ void printList(Node *head, int len)
     head = head->next;
   }
 }
+
+void freeList(Node *head)
+{
+  /* Declaring Variables */
+  Node *temp = head;
+
+  while(head)
+  {
+    temp = head;
+    head = head->next;
+    free(temp);
+  }
+}

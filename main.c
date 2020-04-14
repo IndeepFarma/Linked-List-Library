@@ -31,5 +31,8 @@ int main(){
 
   printList(list, length);
 
+  freeList(list);
+  free(list);
+
   return 0;
 }
