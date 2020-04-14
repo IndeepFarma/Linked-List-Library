@@ -13,4 +13,9 @@ typedef struct linkedListNode {
 } Node;
 
 /*Function Prototypes*/
+int getListLength(Node *head);
 Node *initNewNode(int data);
+void appendList(Node **head, Node *node);
+void prependList(Node **head, Node *node);
+void printList(Node *head, int len);
+
