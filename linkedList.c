@@ -19,6 +19,29 @@ int getListLength(Node *head)
   return len;
 }
 
+/* Remove node from head of list */
+Node *removeHead(Node **head)
+{
+  /* Check validity */
+  if(*head == NULL)
+  {
+    return NULL;
+  }
+
+  /* Declaring variables */
+  Node *temp = *head;
+
+  if((*head)->next != NULL)
+  {
+    *head = (*head)->next;
+  }
+
+  temp->next = NULL;
+
+  return temp;
+ 
+}
+
 /* Initialize a new Node */
 Node *initNewNode(int data)
 {
@@ -77,7 +100,8 @@ void printList(Node *head, int len)
   }
 }
 
-void freeList(Node *head)
+/* Free the nodes inside of a list */
+void freeListNodes(Node *head)
 {
   /* Declaring Variables */
   Node *temp = head;

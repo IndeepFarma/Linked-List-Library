@@ -8,9 +8,6 @@ int main(){
   int i = 0;
   int input = 0;
 
-  /* Malloc the array */
-  // list = malloc(sizeof(Node) * 5);
-
   for(i = 0; i < 5; i++)
   {
     /* Obtain input from the user */
@@ -26,12 +23,15 @@ int main(){
 
   }
 
+  Node *remove = removeHead(&list);
+  printf("Removed node: %d\n", remove->data);
+
   int length = getListLength(list);
   printf("Length of list: %d\n", length);
 
   printList(list, length);
 
-  freeList(list);
+  freeListNodes(list);
   free(list);
 
   return 0;
