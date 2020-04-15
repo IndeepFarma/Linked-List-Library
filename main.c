@@ -1,3 +1,9 @@
+/* Author: Indeep Farma 
+  **************************************
+  THIS MAIN IS ONLY FOR TESTING PURPOSES
+  **************************************
+*/
+
 #include "linkedList.h"
 
 int main(){
@@ -23,7 +29,7 @@ int main(){
 
   }
 
-  Node *remove = removeTail(&list);
+  Node *remove = removeNode(&list, 3);
   printf("Removed node: %d\n", remove->data);
 
   int length = getListLength(list);

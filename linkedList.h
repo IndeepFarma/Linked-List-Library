@@ -15,6 +15,7 @@ typedef struct linkedListNode {
 /*Function Prototypes*/
 int getListLength(Node *head);
 Node *initNewNode(int data);
+Node *removeNode(Node **head, int data);
 Node *removeHead(Node **head);
 Node *removeTail(Node **head);
 void appendList(Node **head, Node *node);

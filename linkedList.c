@@ -19,6 +19,27 @@ int getListLength(Node *head)
   return len;
 }
 
+
+Node *removeNode(Node **head, int data)
+{
+  /* Check validity */
+  if(*head == NULL)
+  {
+    return NULL;
+  }
+
+  Node *traverse = *head;
+
+  while(traverse->next->data != data)
+  {
+    traverse = traverse->next;
+  }
+
+  Node *remNode = traverse->next;
+  traverse->next = remNode->next;
+  return remNode;
+}
+
 /* Remove node from head of list */
 Node *removeHead(Node **head)
 {
@@ -39,7 +60,6 @@ Node *removeHead(Node **head)
   temp->next = NULL;
 
   return temp;
- 
 }
 
 Node *removeTail(Node **head)
@@ -63,7 +83,6 @@ Node *removeTail(Node **head)
   traverse->next = NULL;
 
   return temp;
-
 }
 
 /* Initialize a new Node */
