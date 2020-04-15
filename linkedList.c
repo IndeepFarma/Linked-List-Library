@@ -42,6 +42,30 @@ Node *removeHead(Node **head)
  
 }
 
+Node *removeTail(Node **head)
+{
+  /* Check validity */
+  if(*head == NULL) 
+  {
+    return NULL;
+  }
+
+  /* Declaring variables */
+  Node *traverse = *head;
+
+  /* Traverse to the tail */
+  while(traverse->next->next != NULL)
+  {
+    traverse = traverse->next;
+  }
+
+  Node *temp = traverse->next;
+  traverse->next = NULL;
+
+  return temp;
+
+}
+
 /* Initialize a new Node */
 Node *initNewNode(int data)
 {

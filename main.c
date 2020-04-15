@@ -23,7 +23,7 @@ int main(){
 
   }
 
-  Node *remove = removeHead(&list);
+  Node *remove = removeTail(&list);
   printf("Removed node: %d\n", remove->data);
 
   int length = getListLength(list);
