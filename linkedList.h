@@ -6,7 +6,6 @@
 #include <string.h>
 
 /* Linnked List Structure */
-
 typedef struct linkedListNode {
   int data;
   struct linkedListNode *next;
@@ -15,10 +14,11 @@ typedef struct linkedListNode {
 /*Function Prototypes*/
 int getListLength(Node *head);
 Node *initNewNode(int data);
-Node *removeNode(Node **head, int data);
 Node *removeHead(Node **head);
+Node *removeNode(Node **head, int data);
 Node *removeTail(Node **head);
 void appendList(Node **head, Node *node);
+void copyList(Node **des, Node **src);
 void freeListNodes(Node *head);
 void prependList(Node **head, Node *node);
 void printList(Node *head, int len);

@@ -29,14 +29,23 @@ int main(){
 
   }
 
-  Node *remove = removeNode(&list, 3);
-  printf("Removed node: %d\n", remove->data);
+  /*Node *remove = removeTail(&list);
+  printf("Removed node: %d\n", remove->data);*/
+
+  Node *copy = NULL;
+
+  copyList(&copy, &list);
 
   int length = getListLength(list);
   printf("Length of list: %d\n", length);
 
+  printf("LIST\n");
   printList(list, length);
 
+  printf("*******COPY**********\n");
+  printList(copy, length);
+
+  // free(remove);
   freeListNodes(list);
   free(list);
 

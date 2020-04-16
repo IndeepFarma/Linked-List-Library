@@ -19,7 +19,7 @@ int getListLength(Node *head)
   return len;
 }
 
-
+/* Remove a desired node from the list */
 Node *removeNode(Node **head, int data)
 {
   /* Check validity */
@@ -28,14 +28,16 @@ Node *removeNode(Node **head, int data)
     return NULL;
   }
 
+  /* Declaring variables */
   Node *traverse = *head;
+  Node *remNode = NULL;
 
   while(traverse->next->data != data)
   {
     traverse = traverse->next;
   }
 
-  Node *remNode = traverse->next;
+  remNode = traverse->next;
   traverse->next = remNode->next;
   return remNode;
 }
@@ -72,6 +74,7 @@ Node *removeTail(Node **head)
 
   /* Declaring variables */
   Node *traverse = *head;
+  Node *temp = NULL;
 
   /* Traverse to the tail */
   while(traverse->next->next != NULL)
@@ -79,7 +82,7 @@ Node *removeTail(Node **head)
     traverse = traverse->next;
   }
 
-  Node *temp = traverse->next;
+  temp = traverse->next;
   traverse->next = NULL;
 
   return temp;
@@ -123,6 +126,27 @@ void appendList(Node **head, Node *node)
       traverse = traverse->next;
     }
     traverse->next = node;
+  }
+}
+
+/* Copy list into another list */
+void copyList(Node **des, Node **src)
+{
+  /* Check validity */
+  if(src == NULL)
+  {
+    return;
+  }
+
+  /* Declaring variables */
+  Node *temp = NULL;
+  Node *traverse = *src;
+
+  while(traverse)
+  {
+    temp = initNewNode(traverse->data);
+    appendList(des, temp);
+    traverse = traverse->next;
   }
 }
 
