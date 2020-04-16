@@ -64,6 +64,7 @@ Node *removeHead(Node **head)
   return temp;
 }
 
+/* Remove node from tail of list */
 Node *removeTail(Node **head)
 {
   /* Check validity */
@@ -158,12 +159,13 @@ void prependList(Node **head, Node *node)
 }
 
 /* Print the entire list */
-void printList(Node *head, int len)
+void printList(Node *head)
 {
-  for(int i = 0; i < len; i++)
+  Node *temp = head;
+  while(temp)
   {
-    printf("[%d] = %d\n", i, head->data);
-    head = head->next;
+    printf("%d - ", temp->data);
+    temp = temp->next;
   }
 }
 

@@ -21,5 +21,5 @@ void appendList(Node **head, Node *node);
 void copyList(Node **des, Node **src);
 void freeListNodes(Node *head);
 void prependList(Node **head, Node *node);
-void printList(Node *head, int len);
+void printList(Node *head);
 

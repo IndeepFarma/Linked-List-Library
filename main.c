@@ -40,10 +40,12 @@ int main(){
   printf("Length of list: %d\n", length);
 
   printf("LIST\n");
-  printList(list, length);
+  printList(list);
+  printf("\n");
 
   printf("*******COPY**********\n");
-  printList(copy, length);
+  printList(copy);
+  printf("\n");
 
   // free(remove);
   freeListNodes(list);
